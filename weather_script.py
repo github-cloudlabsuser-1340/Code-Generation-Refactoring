@@ -13,6 +13,9 @@ def get_weather(city: str, api_key: str) -> dict:
 
 if __name__ == "__main__":
     city = "London"
-    api_key = "9aec52df50717ffd3821589530f6bf61"
+    api_key = input("Enter your OpenWeatherMap API key: ")
+    if not api_key:
+        print("API key is required.")
+        exit(1)
     weather_data = get_weather(city, api_key)
     print(weather_data)
